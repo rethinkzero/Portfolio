@@ -104,15 +104,12 @@ body {
 .content h2 {
   color: #2c3e50;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.content ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.content ul li {
-  margin-bottom: 10px;
+.content p {
+text-align: center;
+font-weight: bold;
 }
 
 /* Footer */
