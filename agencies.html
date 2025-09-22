@@ -3,8 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Travel Through Space</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Social Media Agencies | Deacy's Journey</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Base styles from your existing CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .navbar nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: #0073e6;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 60vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e74c3c;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #c0392b;
+    }
+
+    /* Main content */
+    .content {
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* PDF-style layout */
+    .agency-section {
+      margin-bottom: 60px;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: #f9f9f9;
+    }
+
+    .agency-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #0073e6;
+      padding-bottom: 15px;
+    }
+
+    .agency-logo {
+      width: 80px;
+      height: 80px;
+      background: #0073e6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      margin-right: 20px;
+    }
+
+    .agency-title {
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    .agency-subtitle {
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      margin-top: 5px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #2c3e50;
+      margin: 30px 0 15px;
+      border-left: 4px solid #0073e6;
+      padding-left: 15px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .info-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .info-item h4 {
+      color: #0073e6;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+    }
+
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    .comparison-table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .point-of-view {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #e74c3c;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .point-of-view h4 {
+      color: #e74c3c;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f8f8;
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .agency-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .agency-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -20,32 +266,159 @@
   <section class="hero" style="background-image: url('https://images-assets.nasa.gov/image/PIA12235/PIA12235~orig.jpg');">
     <div class="hero-content">
       <h1>Social Media Agencies</h1>
-      <p>Discover galaxies, nebulae, and distant worlds through the lens of NASA’s telescopes.</p>
-      <a href="about.html" class="btn">Learn More</a>
+      <p>Analysis of leading social media marketing agencies and their approaches</p>
     </div>
   </section>
-<p>What they do: They provide comprehensive social media marketing services with a focus on both organic and paid strategies. They develop bespoke strategies tailored to each client's specific needs and business objectives, taking a holistic approach that combines creative content with data-driven insights.
-How they do it – Social Shepherd utilizes a strategic process that begins with comprehensive research and analysis of the client's industry, target audience, and competitors. They employ social listening tools to monitor conversations and trends, analytics platforms to track performance, and content creation tools to produce engaging social media content. Their approach emphasizes community nurturing and data-backed decision making, ensuring campaigns are both creative and effective.
-Who works there – a team of social media strategists, content creators, account managers, data analysts, and influencer marketing specialists.
-Who their clients are – a diverse range of clients across multiple industries, with a particular experience in DTC (direct-to-consumer) brands and businesses focused on e-commerce.
-Money –they do not publicly display their prices, but large-scale companies like social sphere usually make around 12k to 50k + a month or 6 to 8 figure monthly.
-Where they are – recently relocated to Bath, UK. The agency appears to be a medium-sized operation with a focus on maintaining a strong company culture and collaborative work environment.
-Results – they measure their success and results through a combination of metrics that include engagement rates, follower growth, conversion rates, lead generation, and ROI. Following a transparent report.
-What makes them successful – Social Shepherd builds trust through their comprehensive approach that combines creative excellence with strategic thinking, like Integrated Services, Creative Expertise, and Transparent Reporting.
-Their niche –  is social-first marketing that combines creative content with strategic planning across organic and paid channels. They appear to specialize in comprehensive social media management for businesses, DTC brands, and e-commerce businesses.
 
+  <main class="content">
+    <!-- Social Shepherd Section -->
+    <div class="agency-section">
+      <div class="agency-header">
+        <div class="agency-logo">SS</div>
+        <div>
+          <h2 class="agency-title">Social Shepherd</h2>
+          <p class="agency-subtitle">The results-driven Social first agency you've been looking for</p>
+        </div>
+      </div>
 
-What they do – Voy's main services include full-service Facebook and Instagram advertising, retargeting campaigns, creative studio services, custom audience targeting, dynamic product ads, and real-time analytics.
-How they do it – Voy Media follows a structured six-step process that begins with consultation and moves through account setup, creative research, campaign development, production, launch, and ongoing optimization. Their methodology includes A/B testing of ad copies, images, and targeting parameters, dynamic product ads for e-commerce clients, and multidimensional optimization that may include email marketing integration and landing page redesigns.
-Who works there – a more diverse team structure that includes dedicated account managers, lead strategists, copywriters, graphic designers, illustrators, video editors, production specialists, and data analysts.
-Who their clients are – Voy Media has clients that include Fortune 500 companies, e-commerce businesses, education providers, mobile apps, and startups.
-Money – they do not publicly display their prices, but large-scale companies like social sphere usually make around 12k to 50k + a month or 6 to 8 figure monthly. 
-Where they are – they have multiple locations, but primary operations are located in New York City, where they can talk to clients face to face in one of their headquarters.
-Results – Voy Media focuses heavily on quantifiable business outcomes rather than vanity metrics. They track direct revenue generated, return on ad spend (ROAS), customer acquisition costs, and overall sales growth.
-What makes them successful – Voy Media earns client trust through their proven results and entrepreneurial experience, like
-Performance-Based Approach, Entrepreneurial Background, Transparent Communication, Comprehensive Service Offering. 
-Their niche – they have a specific niche for Facebook and Instagram advertising specialists, particularly for direct response and e-commerce customer acquisition.
-</p>
+      <h3 class="section-title">What they do</h3>
+      <p>They provide comprehensive social media marketing services with a focus on both organic and paid strategies. They develop bespoke strategies tailored to each client's specific needs and business objectives, taking a holistic approach that combines creative content with data-driven insights.</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <h4>How they do it</h4>
+          <p>Social Shepherd utilizes a strategic process that begins with comprehensive research and analysis of the client's industry, target audience, and competitors. They employ social listening tools to monitor conversations and trends, analytics platforms to track performance, and content creation tools to produce engaging social media content. Their approach emphasizes community nurturing and data-backed decision making, ensuring campaigns are both creative and effective.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Who works there</h4>
+          <p>A team of social media strategists, content creators, account managers, data analysts, and influencer marketing specialists.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Who their clients are</h4>
+          <p>A diverse range of clients across multiple industries, with a particular experience in DTC (direct-to-consumer) brands and businesses focused on e-commerce.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Money</h4>
+          <p>They do not publicly display their prices, but large-scale companies like social sphere usually make around 12k to 50k+ a month or 6 to 8 figure monthly.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Where they are</h4>
+          <p>Recently relocated to Bath, UK. The agency appears to be a medium-sized operation with a focus on maintaining a strong company culture and collaborative work environment.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Results</h4>
+          <p>They measure their success and results through a combination of metrics that include engagement rates, follower growth, conversion rates, lead generation, and ROI. Following a transparent report.</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">What makes them successful</h3>
+      <p>Social Shepherd builds trust through their comprehensive approach that combines creative excellence with strategic thinking, like Integrated Services, Creative Expertise, and Transparent Reporting.</p>
+
+      <h3 class="section-title">Their niche</h3>
+      <p>Is social-first marketing that combines creative content with strategic planning across organic and paid channels. They appear to specialize in comprehensive social media management for businesses, DTC brands, and e-commerce businesses.</p>
+    </div>
+
+    <!-- Voy Media Section -->
+    <div class="agency-section">
+      <div class="agency-header">
+        <div class="agency-logo">VM</div>
+        <div>
+          <h2 class="agency-title">Voy Media</h2>
+          <p class="agency-subtitle">Creative Studio - Compelling content on the world's most active platforms</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">What they do</h3>
+      <p>Voy's main services include full-service Facebook and Instagram advertising, retargeting campaigns, creative studio services, custom audience targeting, dynamic product ads, and real-time analytics.</p>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <h4>How they do it</h4>
+          <p>Voy Media follows a structured six-step process that begins with consultation and moves through account setup, creative research, campaign development, production, launch, and ongoing optimization. Their methodology includes A/B testing of ad copies, images, and targeting parameters, dynamic product ads for e-commerce clients, and multidimensional optimization that may include email marketing integration and landing page redesigns.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Who works there</h4>
+          <p>A more diverse team structure that includes dedicated account managers, lead strategists, copywriters, graphic designers, illustrators, video editors, production specialists, and data analysts.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Who their clients are</h4>
+          <p>Voy Media has clients that include Fortune 500 companies, e-commerce businesses, education providers, mobile apps, and startups.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Money</h4>
+          <p>They do not publicly display their prices, but large-scale companies like social sphere usually make around 12k to 50k+ a month or 6 to 8 figure monthly.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Where they are</h4>
+          <p>They have multiple locations, but primary operations are located in New York City, where they can talk to clients face to face in one of their headquarters.</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>Results</h4>
+          <p>Voy Media focuses heavily on quantifiable business outcomes rather than vanity metrics. They track direct revenue generated, return on ad spend (ROAS), customer acquisition costs, and overall sales growth.</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">What makes them successful</h3>
+      <p>Voy Media earns client trust through their proven results and entrepreneurial experience, like Performance-Based Approach, Entrepreneurial Background, Transparent Communication, Comprehensive Service Offering.</p>
+
+      <h3 class="section-title">Their niche</h3>
+      <p>They have a specific niche for Facebook and Instagram advertising specialists, particularly for direct response and e-commerce customer acquisition.</p>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="agency-section">
+      <h2 class="section-title" style="font-size: 2rem; border-left: none; text-align: center;">Comparison</h2>
+      
+      <table class="comparison-table">
+        <tr>
+          <th></th>
+          <th>Voy Media</th>
+          <th>Social Shepherd</th>
+        </tr>
+        <tr>
+          <td>Approach</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td>Offers More</td>
+          <td>✓</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Meaningful Connection</td>
+          <td>✓</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Gets the Job Done</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+      </table>
+
+      <div class="point-of-view">
+        <h4>Point of view #1</h4>
+        <p>I would hire Voy Media because their approach and real-time analytics capture my attention more than anything. Always knowing what is happening and how to overcome it becomes key in social media. Especially in trending moments.</p>
+      </div>
+
+      <div class="point-of-view">
+        <h4>Point of view #2</h4>
+        <p>I would work for Voy Media because they are more abroad and have bigger teams with a wider distribution. Social Shepherd has good work habits and ethics but Voy Media seems more interesting and has a better connection with its clients.</p>
+      </div>
+    </div>
+  </main>
+
   <footer>
     <p>© 2025 Matias Portfolio. All rights reserved.</p>
   </footer>
