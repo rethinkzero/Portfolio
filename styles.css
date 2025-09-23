@@ -501,27 +501,6 @@ footer {
   margin-bottom: 8px;
 }
 
-/* Responsive adjustments for video page */
-@media (max-width: 768px) {
-  .platform-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .platform-logo {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-  
-  .research-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .strengths-limitations {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Video Platform Research Styles - Matching Agency Style */
 .platform-section {
   margin-bottom: 60px;
@@ -674,3 +653,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
