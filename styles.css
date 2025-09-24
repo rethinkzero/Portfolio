@@ -8,7 +8,7 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
   background: #F2F2F2; /* Light gray background */
-  color: #0D0D0D; /* Near-black text for readability */
+  color: #000000; /* Black text for readability */
 }
 
 /* Navbar */
@@ -53,7 +53,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #0D0D0D; /* Near-black text */
+  color: #000000; /* black text */
   position: relative;
 }
 
@@ -548,3 +548,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
