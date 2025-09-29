@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Travel Through Space</title>
+  <title>Home | Cosmic Decay</title>
   <style>
     /* Base Styles */
     body {
@@ -17,24 +17,24 @@
       overflow-x: hidden;
     }
 
-    /* SVG Filter for Liquid Distortion - This is key! */
+    /* SVG Filter for Liquid Distortion */
     svg {
       position: absolute;
       width: 0;
       height: 0;
     }
 
-    /* Liquid Glass Container */
+    /* More Transparent Liquid Glass Container */
     .liquid-glass {
       position: relative;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08); /* More transparent */
+      backdrop-filter: blur(25px); /* Increased blur for better glass effect */
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px; /* Slightly less rounded for more rectangular look */
       padding: 2rem;
       box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
@@ -49,11 +49,11 @@
       bottom: 0;
       background: linear-gradient(
         135deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.05) 50%,
-        rgba(255, 255, 255, 0.1) 100%
+        rgba(255, 255, 255, 0.06) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0.06) 100%
       );
-      border-radius: 20px;
+      border-radius: 16px;
       filter: url(#liquid-distortion);
       animation: liquidMove 8s ease-in-out infinite;
       z-index: -1;
@@ -70,7 +70,7 @@
       background: linear-gradient(
         45deg,
         transparent 30%,
-        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.08) 50%,
         transparent 70%
       );
       transform: rotate(45deg);
@@ -82,15 +82,15 @@
     @keyframes liquidMove {
       0%, 100% {
         transform: translateY(0) scale(1);
-        opacity: 0.6;
+        opacity: 0.5;
       }
       33% {
-        transform: translateY(-10px) scale(1.02);
-        opacity: 0.8;
+        transform: translateY(-8px) scale(1.01);
+        opacity: 0.7;
       }
       66% {
-        transform: translateY(5px) scale(0.98);
-        opacity: 0.7;
+        transform: translateY(4px) scale(0.99);
+        opacity: 0.6;
       }
     }
 
@@ -103,14 +103,14 @@
       }
     }
 
-    /* Navigation */
+    /* Stretched Navigation */
     .navbar {
       position: fixed;
       top: 2rem;
       left: 50%;
       transform: translateX(-50%);
-      width: 90%;
-      max-width: 800px;
+      width: 85%; /* Wider navigation */
+      max-width: 1000px; /* Increased max width */
       z-index: 1000;
     }
 
@@ -118,50 +118,56 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2.5rem; /* More padding for longer look */
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: white;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem; /* More gap between links */
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      transition: all 0.3s ease;
+      padding: 0.8rem 1.5rem; /* Larger click area */
+      border-radius: 12px;
+      transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
     }
 
+    /* Center-out hover effect */
     .nav-links a::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
       background: rgba(255, 255, 255, 0.2);
-      transition: left 0.4s ease;
-      border-radius: 10px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: -1;
     }
 
     .nav-links a:hover::before {
-      left: 0;
+      width: 120%;
+      height: 120%;
+      border-radius: 12px;
     }
 
     .nav-links a:hover {
       transform: translateY(-2px);
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
     }
 
     /* Hero Section */
@@ -176,7 +182,7 @@
 
     .hero-content {
       text-align: center;
-      max-width: 600px;
+      max-width: 650px; /* Slightly wider */
       width: 90%;
     }
 
@@ -197,11 +203,11 @@
 
     /* Button */
     .btn {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.15); /* More transparent */
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       color: white;
-      padding: 15px 40px;
+      padding: 16px 45px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
@@ -228,12 +234,12 @@
     }
 
     .btn:hover {
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.25);
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     }
 
-    /* Footer */
+    /* Stretched Footer (but not as long as nav) */
     footer {
       position: relative;
       text-align: center;
@@ -241,16 +247,24 @@
       margin-top: 2rem;
     }
 
+    .footer-content {
+      width: 70%; /* Wider than content but not full width */
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .navbar {
         top: 1rem;
+        width: 90%;
       }
       
       .nav-content {
         flex-direction: column;
         gap: 1rem;
-        padding: 1rem;
+        padding: 1rem 1.5rem;
       }
       
       .nav-links {
@@ -258,7 +272,7 @@
       }
       
       .nav-links a {
-        padding: 0.4rem 0.8rem;
+        padding: 0.6rem 1.2rem;
         font-size: 0.9rem;
       }
       
@@ -268,6 +282,11 @@
       
       .hero-content p {
         font-size: 1.1rem;
+      }
+      
+      .footer-content {
+        width: 85%;
+        padding: 1rem 1.5rem;
       }
     }
   </style>
@@ -286,7 +305,7 @@
   <header class="navbar">
     <div class="liquid-glass">
       <div class="nav-content">
-        <div class="logo">🪐 Deacy's Journey</div>
+        <div class="logo">🪐 Quantum Decay</div>
         <nav class="nav-links">
           <a href="index.html">Home</a>
           <a href="about.html">About Me</a>
@@ -306,8 +325,8 @@
   </section>
 
   <footer>
-    <div class="liquid-glass">
-      <p>© 2025 Matias Portfolio. All rights reserved.</p>
+    <div class="liquid-glass footer-content">
+      <p>© 2025 Quantum Decay Portfolio. All rights reserved.</p>
     </div>
   </footer>
 </body>
