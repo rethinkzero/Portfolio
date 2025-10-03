@@ -103,23 +103,24 @@
       }
     }
 
-    /* EXTREMELY STRETCHED Navigation */
-    .navbar {
-      position: fixed;
-      top: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 95%; /* Much wider - almost full width */
-      max-width: 1400px; /* Significantly increased max width */
+   .navbar {
+      position: sticky; /* Changed from fixed to sticky */
+      top: 0;
+      left: 0;
+      width: 100%; /* Full width instead of centered */
+      transform: none; /* Remove the centering transform */
+      max-width: none; /* Remove max-width restriction */
       z-index: 1000;
-      padding: 0.6rem 1rem;
+      padding: 0.5rem 2rem; /* Even slimmer vertical padding */
     }
 
     .nav-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 3rem; /* More padding for extra length */
+      padding: 0.8rem 2rem; /* Slimmer padding */
+      max-width: 1200px; /* Constrain content width instead of container */
+      margin: 0 auto; /* Center the content inside */
     }
 
     .logo {
