@@ -106,9 +106,11 @@
    .navbar {
       position: sticky; /* Changed from fixed to sticky */
       top: 0;
-      width: 100%; /* Full width instead of centered */
+      left: 0;
+      width: 100vw;
       transform: none; /* Remove the centering transform */
       max-width: none; /* Remove max-width restriction */
+      box-sizing: border-box;
       z-index: 1000;
       padding: 0.2rem 1rem; /* Even slimmer vertical padding */
     }
@@ -118,7 +120,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.8rem 2rem; /* Slimmer padding */
-      max-width: 1200px; /* Constrain content width instead of container */
+      width: 100%;
+      max-width: none; /* Constrain content width instead of container */
       margin: 0 auto; /* Center the content inside */
     }
 
