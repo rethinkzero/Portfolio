@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Cosmic Decay</title>
+  <title>Quantum Decay</title>
   <style>
     /* Base Styles */
     body {
@@ -14,56 +14,79 @@
       background-size: cover;
       color: white;
       min-height: 100vh;
-      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* SVG Filter for Liquid Distortion */
-    svg {
-      position: absolute;
-      width: 0;
-      height: 0;
-    }
-
-    /* NAVBAR FIXES */
-    .navbar {
-      position: sticky;
+    /* Big Logo Header - Disappears on scroll */
+    .logo-header {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
-      padding: 0;
+      text-align: center;
+      padding: 3rem 0;
+      background: transparent;
+      z-index: 999;
+      transition: all 0.5s ease;
+    }
+
+    .logo-header.hidden {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    .main-logo {
+      font-size: 4rem;
+      font-weight: 900;
+      color: white;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
       margin: 0;
+    }
+
+    /* Liquid Glass Navbar - Stays fixed */
+    .navbar {
+      position: fixed;
+      top: 12rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      padding: 0.8rem 2rem;
+      z-index: 1000;
+      transition: all 0.3s ease;
     }
 
     .nav-content {
       display: flex;
-      justify-content: space-between;
+      gap: 2rem;
       align-items: center;
-      padding: 0.8rem 2rem;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.7rem 1.5rem;
-      border-radius: 12px;
-      transition: all 0.4s ease;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+    }
+
+    /* Liquid Glass Effect for Navbar */
+    .liquid-glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
     /* Center-out hover effect */
@@ -74,263 +97,172 @@
       left: 50%;
       width: 0;
       height: 0;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       z-index: -1;
     }
 
     .nav-links a:hover::before {
-      width: 120%;
-      height: 120%;
-      border-radius: 12px;
-    }
-
-    .nav-links a:hover {
-      transform: translateY(-2px);
-      color: #fff;
-      text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
-    }
-
-    /* More Transparent Liquid Glass Container */
-    .liquid-glass {
-      position: relative;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(25px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 16px;
-      padding: 1rem 0;
-      box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-      overflow: hidden;
       width: 100%;
-      box-sizing: border-box;
+      height: 100%;
+      border-radius: 8px;
     }
 
-    /* Liquid distortion effect */
-    .liquid-glass::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.06) 0%,
-        rgba(255, 255, 255, 0.03) 50%,
-        rgba(255, 255, 255, 0.06) 100%
-      );
-      border-radius: 16px;
-      filter: url(#liquid-distortion);
-      animation: liquidMove 8s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    /* FIXED Shine overlay */
-    .liquid-glass::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        45deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.08) 50%,
-        transparent 70%
-      );
-      transform: rotate(45deg);
-      animation: shine 6s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    /* Liquid animation */
-    @keyframes liquidMove {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.5;
-      }
-      33% {
-        transform: translateY(-8px) scale(1.01);
-        opacity: 0.7;
-      }
-      66% {
-        transform: translateY(4px) scale(0.99);
-        opacity: 0.6;
-      }
-    }
-
-    @keyframes shine {
-      0%, 100% {
-        transform: rotate(45deg) translateX(-100%);
-      }
-      50% {
-        transform: rotate(45deg) translateX(100%);
-      }
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding-top: 8rem; /* Space for initial logo and navbar */
     }
 
     /* Hero Section */
     .hero {
-      min-height: 100vh;
+      min-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      position: relative;
     }
 
     .hero-content {
       text-align: center;
-      max-width: 650px;
-      width: 90%;
+      max-width: 600px;
     }
 
     .hero-content h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
 
     .hero-content p {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 2.5rem;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
       opacity: 0.9;
     }
 
-    /* Button */
     .btn {
       background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: white;
-      padding: 16px 45px;
+      padding: 12px 30px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
       transition: all 0.3s ease;
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .btn:hover::before {
-      left: 100%;
     }
 
     .btn:hover {
       background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      transform: translateY(-2px);
     }
 
-    /* Stretched Footer */
+    /* Footer */
     footer {
-      position: relative;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem 0;
       text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
+      margin-top: auto;
     }
 
     .footer-content {
-      width: 70%;
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 1.5rem 2rem;
+      padding: 0 2rem;
     }
 
-    /* Responsive */
+    .footer-content p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
     @media (max-width: 768px) {
-      .navbar {
-        width: 100%;
+      .main-logo {
+        font-size: 2.5rem;
       }
       
-      .nav-content {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+      .navbar {
+        padding: 0.6rem 1rem;
+        top: 10rem;
       }
       
       .nav-links {
-        gap: 1rem;
+        gap: 0.8rem;
       }
       
       .nav-links a {
-        padding: 0.6rem 1.2rem;
+        padding: 0.5rem 1rem;
         font-size: 0.9rem;
       }
       
       .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
       
       .hero-content p {
-        font-size: 1.1rem;
-      }
-      
-      .footer-content {
-        width: 85%;
-        padding: 1rem 1.5rem;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- SVG Filter for Liquid Effect -->
-  <svg>
-    <filter id="liquid-distortion">
-      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" result="turbulence">
-        <animate attributeName="baseFrequency" dur="20s" values="0.01 0.02;0.02 0.03;0.01 0.02" repeatCount="indefinite"/>
-      </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="3" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-  </svg>
-
-  <header class="navbar">
-    <div class="liquid-glass">
-      <div class="nav-content">
-        <div class="logo">🪐 Cosmic Decay</div>
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About Me</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="bookmarks.html">Bookmarks</a>
-        </nav>
-      </div>
-    </div>
+  <!-- Big Logo Header -->
+  <header class="logo-header" id="logoHeader">
+    <h1 class="main-logo">QUANTUM DECAY</h1>
   </header>
 
-  <section class="hero">
-    <div class="liquid-glass hero-content">
-      <h1>Explore the Universe</h1>
-      <p>Discover galaxies, nebulae, and distant worlds through the lens of NASA's telescopes.</p>
-      <a href="about.html" class="btn">Learn More</a>
+  <!-- Liquid Glass Navbar -->
+  <nav class="navbar liquid-glass" id="navbar">
+    <div class="nav-content">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="bookmarks.html">Bookmarks</a>
+      </div>
     </div>
-  </section>
+  </nav>
 
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Explore the Universe</h1>
+        <p>Discover galaxies, nebulae, and distant worlds through the lens of NASA's telescopes.</p>
+        <a href="about.html" class="btn">Learn More</a>
+      </div>
+    </section>
+
+    <!-- You can add more sections here for your content -->
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <div class="liquid-glass footer-content">
+    <div class="footer-content">
       <p>© 2025 Quantum Decay Portfolio. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Hide logo on scroll, keep navbar visible
+    window.addEventListener('scroll', function() {
+      const logoHeader = document.getElementById('logoHeader');
+      const navbar = document.getElementById('navbar');
+      const scrollPosition = window.scrollY;
+      
+      if (scrollPosition > 100) {
+        logoHeader.classList.add('hidden');
+        navbar.style.top = '1rem'; // Move navbar up when logo disappears
+      } else {
+        logoHeader.classList.remove('hidden');
+        navbar.style.top = '12rem'; // Position navbar below logo
+      }
+    });
+  </script>
 </body>
 </html>
