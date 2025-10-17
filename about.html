@@ -3,34 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me | Space Journey</title>
+  <title>About Me | Quantum Decay</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">🪐 Deacy's Journey</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About Me</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="bookmarks.html">Bookmarks</a>
-    </nav>
+  <!-- Big Logo Header -->
+  <header class="logo-header" id="logoHeader">
+    <h1 class="main-logo">QUANTUM DECAY</h1>
   </header>
 
-  <section class="hero" style="background-image: url('https://images-assets.nasa.gov/image/PIA03606/PIA03606~orig.jpg');">
-    <div class="hero-content">
-      <h1>About Me</h1>
-      <p>Passionate about coding, design, and the wonders of the universe.</p>
+  <!-- Liquid Glass Navbar -->
+  <nav class="navbar liquid-glass" id="navbar">
+    <div class="nav-content">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="bookmarks.html">Bookmarks</a>
+      </div>
     </div>
-  </section>
+  </nav>
 
-  <main class="content">
-    <h2>My Journey</h2>
-    <p>I combine creativity and technology to tell stories through design, code, and exploration.</p>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section - NO BACKGROUND IMAGE -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>About Me</h1>
+        <p>Passionate about coding, design, and the wonders of the universe.</p>
+      </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="content">
+      <div class="liquid-glass" style="padding: 3rem; margin: 2rem auto; max-width: 800px;">
+        <h2>My Journey</h2>
+        <p style="text-align: center; font-size: 1.2rem; line-height: 1.8; color: rgba(255, 255, 255, 0.9);">
+          I combine creativity and technology to tell stories through design, code, and exploration. 
+          From the depths of space to the intricacies of digital design, I'm constantly exploring 
+          new frontiers and pushing boundaries.
+        </p>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Matias Portfolio. All rights reserved.</p>
+    <div class="footer-content">
+      <p>© 2025 Quantum Decay Portfolio. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
