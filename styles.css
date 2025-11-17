@@ -124,11 +124,10 @@ body {
 
 /* Hero Section */
 .hero {
-  min-height: 50vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
   position: relative;
 }
 
@@ -428,6 +427,7 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
+
 
 
 
