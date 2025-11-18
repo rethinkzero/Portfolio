@@ -355,6 +355,69 @@ footer {
   font-size: 0.9rem;
 }
 
+/* ===== CAPSTONE SPECIFIC STYLES ===== */
+/* Audience Research Section */
+.audience-research {
+  padding: 3rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.research-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.section-subheading {
+  color: white;
+  border-left: 4px solid rgba(255, 255, 255, 0.3);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.research-text {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.research-list {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  padding-left: 2rem;
+}
+
+.research-list li {
+  margin-bottom: 0.5rem;
+}
+
+.interview-notes {
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+}
+
+.interview-heading {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.article-summary {
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+}
+
+.insight-item h4 {
+  color: white;
+}
+
+.insight-item p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
   .main-logo {
@@ -413,6 +476,11 @@ footer {
   .platform-sl-grid {
     grid-template-columns: 1fr;
   }
+  
+  .audience-research {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
 }
 
 /* Platform-specific colors */
@@ -427,8 +495,3 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
-
-
-
-
-
