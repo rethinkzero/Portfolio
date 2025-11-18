@@ -357,129 +357,221 @@ footer {
 
 /* ===== CAPSTONE SPECIFIC STYLES ===== */
 /* Audience Research Section */
+.capstone-page .content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.capstone-page .hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.capstone-page .hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
 .audience-research {
   padding: 3rem;
   margin: 2rem auto;
   max-width: 1000px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .research-heading {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: white;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 1rem;
 }
 
 .section-subheading {
   color: white;
   border-left: 4px solid rgba(255, 255, 255, 0.3);
   padding-left: 1rem;
-  margin-bottom: 1rem;
+  margin: 2.5rem 0 1.5rem 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.section-subheading:first-of-type {
+  margin-top: 1rem;
 }
 
 .research-text {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .research-list {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  line-height: 1.7;
   padding-left: 2rem;
+  margin: 1.5rem 0;
 }
 
 .research-list li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
 }
 
 .interview-notes {
-  padding: 1.5rem;
-  margin: 1rem 0;
+  padding: 2rem;
+  margin: 2rem 0;
   border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .interview-heading {
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
 }
 
 .article-summary {
-  padding: 1.5rem;
-  margin: 1rem 0;
+  padding: 2rem;
+  margin: 2rem 0;
   border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Platform info items for capstone */
+.platform-info-item {
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.platform-info-item:last-child {
+  margin-bottom: 0;
+}
+
+.platform-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.insight-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.insight-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .insight-item h4 {
   color: white;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.4);
+  padding-left: 0.75rem;
 }
 
 .insight-item p {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN UPDATES ===== */
 @media (max-width: 768px) {
-  .main-logo {
-    font-size: 2.5rem;
-  }
-  
-  .navbar {
-    padding: 0.6rem 1rem;
-    top: 10rem;
-  }
-  
-  .nav-links {
-    gap: 0.8rem;
-  }
-  
-  .nav-links a {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
-  
-  .projects-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .project {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  .agency-header,
-  .platform-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .agency-logo,
-  .platform-logo {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-  
-  .info-grid,
-  .platform-info-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .platform-sl-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .audience-research {
     padding: 1.5rem;
     margin: 1rem auto;
+  }
+  
+  .research-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .section-subheading {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+  }
+  
+  .interview-notes,
+  .article-summary {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .platform-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .insight-item {
+    padding: 1.25rem;
+  }
+  
+  .research-list {
+    padding-left: 1.5rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .audience-research {
+    padding: 1rem;
+  }
+  
+  .research-heading {
+    font-size: 1.8rem;
+  }
+  
+  .section-subheading {
+    font-size: 1.3rem;
+  }
+  
+  .interview-notes,
+  .article-summary {
+    padding: 1rem;
+  }
+  
+  .insight-item {
+    padding: 1rem;
   }
 }
 
@@ -495,3 +587,4 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
+
