@@ -357,26 +357,6 @@ footer {
 
 /* ===== CAPSTONE SPECIFIC STYLES ===== */
 
-/* Page Header - Match other pages */
-.section-header {
-  margin-bottom: 3rem;
-  text-align: left;
-}
-
-.page-title {
-  font-size: 2.5rem;
-  color: white;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  font-weight: 700;
-}
-
-.page-subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-}
-
 /* Content Sections - Match agency-section style */
 .content-section {
   margin-bottom: 3rem;
@@ -574,6 +554,7 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
+
 
 
 
