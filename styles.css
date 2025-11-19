@@ -357,22 +357,14 @@ footer {
 
 /* ===== CAPSTONE SPECIFIC STYLES ===== */
 
-/* Content Layout */
-.content {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-/* Section Headers */
+/* Page Header - Match other pages */
 .section-header {
   margin-bottom: 3rem;
   text-align: left;
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: white;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -380,33 +372,44 @@ footer {
 }
 
 .page-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
 }
 
-/* Content Sections */
+/* Content Sections - Match agency-section style */
 .content-section {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .section-title-container {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 1rem;
 }
 
 .section-title {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   color: white;
   font-weight: 600;
-  border-left: 4px solid rgba(255, 255, 255, 0.4);
-  padding-left: 1rem;
   margin: 0;
+  border-left: 4px solid rgba(255, 255, 255, 0.3);
+  padding-left: 1rem;
 }
 
-/* Content Cards */
+/* Content Cards - Match info-item style */
 .content-card {
-  padding: 2.5rem;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 2rem;
 }
 
@@ -436,7 +439,7 @@ footer {
 /* Content Subheaders */
 .content-subtitle {
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -457,33 +460,34 @@ footer {
   margin-bottom: 0;
 }
 
-/* Insights Grid */
+/* Insights Grid - Match info-grid style */
 .insights-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
 .insight-card {
-  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
   border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
 
 .insight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .insight-title {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  border-left: 3px solid rgba(255, 255, 255, 0.4);
-  padding-left: 0.75rem;
 }
 
 .insight-text {
@@ -507,15 +511,20 @@ footer {
   }
   
   .page-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .page-subtitle {
     font-size: 1.1rem;
   }
   
+  .content-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   
   .content-card {
@@ -524,25 +533,25 @@ footer {
   
   .insights-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .insight-card {
-    padding: 1.5rem;
-  }
-  
-  .content-section {
-    margin-bottom: 3rem;
+    padding: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
+  .content-section {
+    padding: 1.25rem;
+  }
+  
   .page-title {
     font-size: 1.8rem;
   }
   
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .content-card {
@@ -553,7 +562,6 @@ footer {
     padding-left: 1rem;
   }
 }
-
 /* Platform-specific colors */
 .tiktok-section .platform-logo {
   background: rgba(0, 0, 0, 0.3);
@@ -566,5 +574,6 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
+
 
 
