@@ -380,7 +380,7 @@ footer {
   font-weight: 600;
   margin: 0;
   border-left: 4px solid rgba(255, 255, 255, 0.3);
-  padding-left: 1rem;
+  padding-left: 0;
 }
 
 /* Content Cards - Match info-item style */
@@ -554,6 +554,7 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
+
 
 
 
