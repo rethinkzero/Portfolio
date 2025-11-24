@@ -184,7 +184,7 @@ body {
 .content h2 {
   color: white;
   margin-bottom: 30px;
-  text-align: left;
+  text-align: center;
   font-size: 2.2rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -554,6 +554,7 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
+
 
 
 
