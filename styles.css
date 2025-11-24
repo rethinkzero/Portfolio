@@ -306,6 +306,7 @@ body {
   margin: 30px 0 15px;
   border-left: 4px solid rgba(255, 255, 255, 0.3);
   padding-left: 15px;
+  text-align: left;
 }
 
 .info-grid,
@@ -555,6 +556,7 @@ footer {
 .youtube-section .platform-logo {
   background: rgba(255, 0, 0, 0.3);
 }
+
 
 
 
