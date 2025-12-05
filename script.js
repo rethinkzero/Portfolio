@@ -20,3 +20,23 @@ document.addEventListener('DOMContentLoaded', function() {
         navbar.style.top = '12rem';
     }
 });
+
+        // Get the container
+        const backToTopContainer = document.getElementById("backToTopContainer");
+
+        // Show the container when user scrolls down 300px
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopContainer.style.display = "flex";
+            } else {
+                backToTopContainer.style.display = "none";
+            }
+        };
+
+        // Scroll to top when clicked (both button and label)
+        backToTopContainer.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        };
