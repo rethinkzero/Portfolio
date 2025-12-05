@@ -3,54 +3,95 @@
   padding: 0;
   box-sizing: border-box;
 }
-     /* Image Gallery */
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
+/* ===== SPRINT 2 SPECIFIC STYLES ===== */
+
+/* Section Headers (like Marketing Projects page) */
+.section-header {
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
-.image-container {
-  padding: 1.5rem;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.page-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
 }
 
-.image-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* Full width moodboard image */
+.full-width-image {
+  margin: 2rem 0 3rem 0;
+  text-align: center;
 }
 
-.large-image {
-  grid-column: 1 / -1;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.sprint-image {
+.moodboard-image {
   width: 100%;
+  max-width: 900px;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   margin-bottom: 1rem;
 }
 
-.image-caption {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
+/* Single image containers */
+.image-container {
+  margin: 2rem 0;
   text-align: center;
-  font-style: italic;
-  margin-top: 0.5rem;
+}
+
+.single-image {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.instagram-image,
+.landing-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.landing-image {
+  max-width: 800px;
+}
+
+/* Content Cards (removed the extra container) */
+.content-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+}
+
+.content-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Content Subheaders */
+.content-subtitle {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-left: 4px solid rgba(255, 255, 255, 0.4);
+  padding-left: 1rem;
+  text-align: left;
 }
 
 /* Email Content */
 .email-content {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.7;
+  text-align: left;
 }
 
 .email-content p {
@@ -61,7 +102,16 @@
   margin-bottom: 0;
 }
 
-/* Updated Back to Top Button with Liquid Glass */
+/* Image Captions */
+.image-caption {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Fixed Back to Top Button (removed the ring) */
 #backToTopContainer {
   position: fixed;
   bottom: 30px;
@@ -72,20 +122,18 @@
   cursor: pointer;
   z-index: 1000;
   display: none;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50px;
-  padding: 8px;
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 
 #backToTop {
   width: 50px;
   height: 50px;
   background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
@@ -94,16 +142,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  margin-bottom: 5px;
-  backdrop-filter: blur(10px);
+  margin-bottom: 8px;
 }
 
 #backToTop:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 #backToTopLabel {
@@ -113,48 +160,10 @@
   text-align: center;
   font-weight: 500;
   background: rgba(255, 255, 255, 0.1);
-  padding: 4px 10px;
-  border-radius: 20px;
   backdrop-filter: blur(5px);
+  padding: 4px 12px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Sprint-specific content card adjustments */
-.sprint-content-section {
-  margin-bottom: 3rem;
-  padding: 2.5rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-/* ===== RESPONSIVE DESIGN FOR SPRINT 2 ===== */
-@media (max-width: 768px) {
-  .image-gallery {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .image-container {
-    padding: 1.25rem;
-  }
-  
-  .sprint-content-section {
-    padding: 1.5rem;
-  }
-  
-  #backToTopContainer {
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  #backToTop {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-  }
 }
 
 /* ===== LIQUID GLASS DESIGN SYSTEM ===== */
@@ -708,19 +717,55 @@ footer {
   background: rgba(255, 0, 0, 0.3);
 }
 
-@media (max-width: 480px) {
-  .image-container {
-    padding: 1rem;
+/* ===== RESPONSIVE DESIGN FOR SPRINT 2 ===== */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
   }
   
-  .sprint-content-section {
+  .content-card {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .content-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .moodboard-image,
+  .instagram-image,
+  .landing-image {
+    max-width: 100%;
+  }
+  
+  #backToTopContainer {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  #backToTop {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  .content-card {
     padding: 1.25rem;
+  }
+  
+  .content-subtitle {
+    font-size: 1.2rem;
   }
   
   #backToTopContainer {
     bottom: 15px;
     right: 15px;
-    padding: 6px;
   }
   
   #backToTop {
@@ -731,15 +776,6 @@ footer {
   
   #backToTopLabel {
     font-size: 10px;
-    padding: 3px 8px;
+    padding: 3px 10px;
   }
 }
-
-
-
-
-
-
-
-
-
