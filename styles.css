@@ -3,53 +3,159 @@
   padding: 0;
   box-sizing: border-box;
 }
-        /* Container for the button and text */
-        #backToTopContainer {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            z-index: 1000;
-            display: none; /* Hidden by default */
-        }
+     /* Image Gallery */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
 
-        /* Button styling */
-        #backToTop {
-            width: 50px;
-            height: 50px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: background-color 0.3s;
-            margin-bottom: 5px;
-        }
+.image-container {
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        #backToTop:hover {
-            background-color: #555;
-        }
+.image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
 
-        /* Text label */
-        #backToTopLabel {
-            font-size: 12px;
-            color: #333;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
+.large-image {
+  grid-column: 1 / -1;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
+.sprint-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
+
+.image-caption {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Email Content */
+.email-content {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+}
+
+.email-content p {
+  margin-bottom: 1rem;
+}
+
+.email-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Updated Back to Top Button with Liquid Glass */
+#backToTopContainer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  padding: 8px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+#backToTop {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+  backdrop-filter: blur(10px);
+}
+
+#backToTop:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#backToTopLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Sprint-specific content card adjustments */
+.sprint-content-section {
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESPONSIVE DESIGN FOR SPRINT 2 ===== */
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .image-container {
+    padding: 1.25rem;
+  }
+  
+  .sprint-content-section {
+    padding: 1.5rem;
+  }
+  
+  #backToTopContainer {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  #backToTop {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
 
 /* ===== LIQUID GLASS DESIGN SYSTEM ===== */
 body {
@@ -602,6 +708,32 @@ footer {
   background: rgba(255, 0, 0, 0.3);
 }
 
+@media (max-width: 480px) {
+  .image-container {
+    padding: 1rem;
+  }
+  
+  .sprint-content-section {
+    padding: 1.25rem;
+  }
+  
+  #backToTopContainer {
+    bottom: 15px;
+    right: 15px;
+    padding: 6px;
+  }
+  
+  #backToTop {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  #backToTopLabel {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}
 
 
 
